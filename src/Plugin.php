@@ -2,6 +2,7 @@
 
 namespace bertoost\symlinkedentries;
 
+use bertoost\symlinkedentries\models\Settings;
 use bertoost\symlinkedentries\traits\PluginComponentsTrait;
 use bertoost\symlinkedentries\traits\PluginEventsTrait;
 use Craft;
@@ -26,5 +27,13 @@ class Plugin extends BasePlugin
 
         $this->registerComponents();;
         $this->registerEventListeners();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected function createSettingsModel()
+    {
+        return new Settings();
     }
 }

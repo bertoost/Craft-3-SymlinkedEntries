@@ -70,10 +70,10 @@ your entry to your Symlinked Entry. It also uses the template where the symlinke
 
 From here you have an extra template variable availble;
 
-Variable     | Description
------------- | -------------------------------------------------------
-entry        | The destination Entry configured as Symlink-to Entry
-symlinkEntry | The original Entry, so you can use other symlink fields
+Variable       | Description
+-------------- | -------------------------------------------------------
+entry          | The destination Entry configured as Symlink-to Entry
+symlinkedEntry | The original Entry, so you can use other symlink fields
 
 #### Example usage
 
