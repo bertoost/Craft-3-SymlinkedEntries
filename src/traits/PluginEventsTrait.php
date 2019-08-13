@@ -3,6 +3,7 @@
 namespace bertoost\symlinkedentries\traits;
 
 use bertoost\symlinkedentries\Plugin;
+use Craft;
 use craft\base\Element;
 use craft\elements\Entry;
 use craft\events\SetElementRouteEvent;
@@ -18,14 +19,17 @@ trait PluginEventsTrait
      */
     public function registerEventListeners(): void
     {
-        Event::on(
-            Entry::class,
-            Element::EVENT_SET_ROUTE,
-            static function (SetElementRouteEvent $event) {
+        if (Craft::$app->getRequest()->getIsSiteRequest()) {
 
-                $event->route = Plugin::getInstance()->getSymlinkService()
-                    ->handleSymlinkedEntry($event->sender);
-            }
-        );
+            Event::on(
+                Entry::class,
+                Element::EVENT_SET_ROUTE,
+                static function (SetElementRouteEvent $event) {
+                    if (null !== $route = Plugin::getInstance()->getSymlinkService()->handleSymlinkedEntry($event->sender)) {
+                        $event->route = $route;
+                    }
+                }
+            );
+        }
     }
 }

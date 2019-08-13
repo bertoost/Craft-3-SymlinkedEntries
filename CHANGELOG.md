@@ -1,5 +1,11 @@
 # Craft CMS 3 - Symlinked Entries
 
+## v1.0.2 - 2019-08-13
+
+### Changed
+
+-  Improved performance to add is-site check to event listener and only override route when symlink is detected
+
 ## v1.0.1 - 2019-08-07
 
 ### Changed
