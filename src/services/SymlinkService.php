@@ -22,11 +22,6 @@ class SymlinkService extends Component
      */
     public function handleSymlinkedEntry(Entry $entry): ?array
     {
-        if (Craft::$app->getRequest()->getIsCpRequest()) {
-
-            return null;
-        }
-
         /** @var Entry $symlinkEntry */
         if (null !== $entry->symlinkTo && null !== ($symlinkEntry = $entry->symlinkTo->one())) {
 
