@@ -2,7 +2,7 @@
   "name": "bertoost/craft-symlinkedentries",
   "description": "Craft 3 CMS plugin for adding Symlinked Entries.",
   "type": "craft-plugin",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "keywords": [
     "craft",
     "craftcms",
@@ -14,7 +14,7 @@
   "homepage": "https://github.com/bertoost/Craft-3-SymlinkedEntries",
   "license": "MIT",
   "require": {
-    "php": "^7.2",
+    "php": "^7.2 || ^8.0",
     "craftcms/cms": "^3.2"
   },
   "autoload": {
